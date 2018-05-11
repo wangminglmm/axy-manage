@@ -1,0 +1,25 @@
+header.header{
+  height: 50px;
+  line-height: 50px;
+  background-color: #007acc;
+  color: #fff;
+  .right{
+    float: right;
+    margin-right: 40px;
+    .ant-dropdown-link{
+      display: block;
+      color: #fff;
+    }
+  }
+}
+.main{
+  overflow: hidden;
+  height: calc(100vh - 50px);
+  .side-bar{
+    width: 256px;
+    padding-bottom: 2000px;
+    margin-bottom: -2000px;
+    border-right: 1px solid #e8e8e8;
+   
+  }
+}

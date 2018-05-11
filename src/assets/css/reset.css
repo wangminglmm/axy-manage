@@ -1,0 +1,23 @@
+
+/* css reset*/
+/* 初始化CSS  重置浏览器样式*/
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form,img,input{ margin:0; padding:0; }
+h1, h2, h3, h4, h5, h6{ font-size:12px; font-weight:normal;}
+img{display: block; border:0 none;}
+ul, ol { list-style:none; }
+input {  font-family: "SimSun","宋体"; border:0 none; outline-style:none;}
+textarea { resize:none; }  
+body {font-size:12px; color:#666; font-family:"微软雅黑";}  /*正文的字体大小和颜色*/
+.clearfix:after{content:''; height:0; line-height:0; visibility:hidden; display:block; clear:both;}
+.clearfix{zoom:1;} /*针对ie低级版本的浏览器*/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+a { color:#5B5B5B; text-decoration:none; }
+a:hover { color:#5B5B5B; text-decoration:underline;}
+img{
+    max-width: 100%;
+}
