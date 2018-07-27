@@ -2,7 +2,7 @@ import { SET_USER,SIGN_OUT } from './action'
 import { combineReducers } from 'redux'
 const userInit = {
   userName:'wangming',
-  power: 'admin'
+  power: 'agent'
 }
 export function user(state=userInit,action){
   switch(action.type){

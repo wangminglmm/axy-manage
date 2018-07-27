@@ -1,0 +1,12 @@
+@import '@/assets/css/variable.scss';
+.list-header{
+  padding: 20px;
+  border-bottom: 1px solid $border_color;
+}
+.list-footer{
+  border-top: 1px solid $border_color;
+  padding: 20px;
+}
+.ml30{
+  margin-left: 30px;
+}

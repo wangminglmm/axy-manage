@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { Menu, Icon, Switch } from 'antd'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 const { SubMenu } = Menu
+
 @connect(state=>(
   {user:state.user}
 ),{})
+@withRouter
 class SideBar extends Component {
   constructor (props) {
     super(props)
@@ -18,7 +21,7 @@ class SideBar extends Component {
     this.MenuList = [
       {
         key: 'overView',
-        url: '/index/admin/overiew',
+        url: '/index/admin/overview',
         power: 'admin',
         name: '总览',
       },
@@ -48,25 +51,25 @@ class SideBar extends Component {
       },
       {
         key: 'overView',
-        url: '/idnex/agent/overView',
+        url: '/index/agent/overView',
         power: 'agent',
         name: '总览'
       },
       {
         key: 'list',
-        url: '/idnex/agent/list',
+        url: '/index/agent/devlist',
         power: 'agent',
         name: '设备列表'
       },
       {
         key: 'pay',
-        url: '/idnex/agent/pay',
+        url: '/index/agent/pay',
         power: 'agent',
         name: '支付'
       },
       {
         key: 'transaction',
-        url: '/index/admin/transaction',
+        url: '/index/agent/transaction',
         power: 'agent',
         name: '交易记录'
       },
@@ -97,15 +100,27 @@ class SideBar extends Component {
     })
   }
   menuItemClick({item,key,keyPath}){
-    console.log(key)
+    let pathname = this.filterMenu.find((item)=>{
+      return item.key == key
+    }).url
+    this.props.history.push({
+      pathname: pathname,
+    })
+  }
+  findCurrentKey(currentPath){
+    let current = this.filterMenu.find((item)=>{
+      return item.url == currentPath
+    })
+    return current && current.key
   }
   render () {
+    let currentPath = this.props.location.pathname;
+    let currentKey = this.findCurrentKey(currentPath);
     return (
       <div className='side-bar'>
         <Menu
           style={{ width: 256 }}
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
+          defaultSelectedKeys={[currentKey]}
           mode={this.state.mode}
           theme={this.state.theme}
           onClick={this.menuItemClick}>

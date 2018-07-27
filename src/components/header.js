@@ -28,6 +28,7 @@ class Header extends Component {
     return (
       <header className='header'>
         <div className='left'>
+          <h1 className="title">联防平台收费系统</h1>
         </div>
         <div className='right'>
           <ul className='clearfix'>

@@ -1,0 +1,18 @@
+@import '@/assets/css/variable.scss';
+.overview-table{
+  width: 600px;
+  margin: 100px 0 0 200px;
+  border: 1px solid $border_color;
+  font-size: 16px;
+  tr,th,td{
+    border: 1px solid $border_color;
+    padding: 15px;
+  }
+  th:nth-of-type(1),td:nth-of-type(1){
+    width: 200px;
+    background-color: #ccc;
+  }
+  .btn-pay{
+    float: right;
+  }
+}
